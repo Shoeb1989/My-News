@@ -12,7 +12,7 @@ const NewsItem = ({ title = "No Title Available", description, url, src }) => {
                 src={src || fallbackImage}
                 style={{ height: "200px", width: "330px" }}
                 className="card-img-top"
-                alt={title.slice(0, 50)}
+                alt={title ? title.slice(0, 50) : "News Image"}
             />
             <div className="card-body">
                 <h5 className="card-title">
@@ -25,7 +25,7 @@ const NewsItem = ({ title = "No Title Available", description, url, src }) => {
                             : description
                         : defaultDescription}
                 </p>
-                <a href={url} className="btn btn-primary">
+                <a href={url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     Read More
                 </a>
             </div>
